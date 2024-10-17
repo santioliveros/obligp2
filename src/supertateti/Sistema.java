@@ -62,9 +62,13 @@ public class Sistema {
                 this.jugarMenu();
                 break;
             case 3:
+                
+                break;
+            default:
+                this.mainMenu();
+                break;
         }
                 
-        
     }
     
     public void jugarMenu(){
@@ -81,6 +85,9 @@ public class Sistema {
                 break;
             case 3:
                 this.mainMenu();
+                break;
+            default:
+                this.jugarMenu();
                 break;
         }
     }
