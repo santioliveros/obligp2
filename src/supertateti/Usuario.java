@@ -47,5 +47,8 @@ public class Usuario {
     public void setGanados(int ganados) {
         this.ganados = ganados;
     }
-    
+    @Override
+    public String toString(){
+        return "Alias - " + this.getAlias() + ", Ganados - " + this.getGanados();
+    }
 }
