@@ -4,6 +4,7 @@ public class Tateti {
     public String[][] tablero = new String[3][3];
     private String posicionTablero = "";
     private boolean ganado = false;
+    private String ganador = "N";
     
     public String getPosicion() {
         return this.posicionTablero;
@@ -19,6 +20,14 @@ public class Tateti {
     
     public void setGanado(boolean estado) {
         this.ganado = estado;
+    }
+    
+    public String getGanador() {
+        return this.ganador;
+    }
+    
+    public void setGanador(String ganador) {
+        this.ganador = ganador;
     }
     
     public void victoriaParcial() {
@@ -54,3 +63,4 @@ public class Tateti {
         }
     }
 }
+
