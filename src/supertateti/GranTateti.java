@@ -201,4 +201,66 @@ public class GranTateti {
         
         return esValida;
     }
+    
+    
+    public void hacerJugadaMagica(String jugada) {
+        // Buscamos el tablero
+        boolean encontrado = false;
+        int fil = 0;
+        int col = 0;
+        for (int i=0 ; i<this.tableroGrande.length && !encontrado ; i++) {
+            for (int j=0 ; j<this.tableroGrande.length && !encontrado ; j++) {
+                if (this.tableroEnUso.equals(this.tableroGrande[i][j].getPosicion())) {
+                    fil = i;
+                    col = j;
+                    encontrado = true;
+                }
+            }
+        }
+        
+        // Recorremos el tablero y lo vaciamos
+        for (int i=0 ; i<this.tableroGrande[fil][col].tablero.length ; i++) {
+            for (int j=0 ; j<this.tableroGrande[fil][col].tablero[0].length ; j++) {
+                this.tableroGrande[fil][col].tablero[i][j] = "";
+            }
+        }
+        
+        // Hacemos la jugada
+        this.hacerJugada(jugada);
+    }
+    
+    
+    public boolean comprobarVictoria() {
+        boolean gano = false;
+        
+        // Chequeamos las diagonales
+        if (this.tableroGrande[0][0].getGanado() && 
+            this.tableroGrande[0][0].getGanador().equals(this.tableroGrande[1][1].getGanador()) &&
+            this.tableroGrande[0][0].getGanador().equals(this.tableroGrande[2][2].getGanador())) {
+                gano = true;
+        }
+        if (!gano && this.tableroGrande[0][2].getGanado() && 
+            this.tableroGrande[0][2].getGanador().equals(this.tableroGrande[1][1].getGanador()) &&
+            this.tableroGrande[0][2].getGanador().equals(this.tableroGrande[2][0].getGanador())) {
+                gano = true;
+        }
+        
+        // Chequeamos las filas y columnas
+        if (!gano) {
+            for (int i=0 ; i<this.tableroGrande.length && !gano ; i++) {
+                if (this.tableroGrande[i][0].getGanado()) {
+                    if (this.tableroGrande[i][0].getGanador().equals(this.tableroGrande[i][1].getGanador()) &&
+                        this.tableroGrande[i][0].getGanador().equals(this.tableroGrande[i][2].getGanador())) {
+                            gano = true;
+                    }
+                    if (this.tableroGrande[0][i].getGanador().equals(this.tableroGrande[1][i].getGanador()) &&
+                        this.tableroGrande[0][i].getGanador().equals(this.tableroGrande[2][i].getGanador())) {
+                            gano = true;
+                    }
+                }
+            }
+        }
+                        
+        return gano;
+    }
 }
