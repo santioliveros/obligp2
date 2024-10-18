@@ -34,11 +34,11 @@ public class Tateti {
         boolean gano = false;
         
         // Chequeamos si es posible ganar con una diagonal
-        if (tablero[0][0] == "X" || tablero[0][0] == "O" || 
-            tablero[0][2] == "X" || tablero[0][2] == "O") {
+        if (this.tablero[0][0].equals("X") || this.tablero[0][0].equals("O") || 
+            this.tablero[0][2].equals("X") || this.tablero[0][2].equals("O")) {
         // Chequeamos las diagonales
-            if ((tablero[0][0] == tablero[1][1] && tablero[0][0] == tablero[2][2]) ||
-                (tablero[0][2] == tablero[1][1] && tablero[0][2] == tablero[2][0])) {
+            if ((this.tablero[0][0].equals(this.tablero[1][1]) && this.tablero[0][0].equals(this.tablero[2][2])) ||
+                (this.tablero[0][2].equals(this.tablero[1][1]) && this.tablero[0][2].equals(this.tablero[2][0]))) {
                     gano = true;
             }
         }
@@ -46,13 +46,13 @@ public class Tateti {
         // Chequeamos si es posible ganar con una fila/columna
         
         // Chequeamos todas las filas y columnas
-        for (int i=0 ; i<tablero.length && !gano ; i++) {
-            if (tablero[i][0] == tablero[i][1] && tablero[i][0] == tablero[i][2]
-                && (tablero[i][0] == "X" || tablero[i][0] == "O")) {
+        for (int i=0 ; i<this.tablero.length && !gano ; i++) {
+            if (this.tablero[i][0].equals(this.tablero[i][1]) && this.tablero[i][0].equals(this.tablero[i][2])
+                && (this.tablero[i][0].equals("X") || this.tablero[i][0].equals("O"))) {
                     gano = true;
             }
-            if (tablero[0][i] == tablero[1][i] && tablero[0][i] == tablero[2][i]
-                && (tablero[0][i] == "X" || tablero[0][i] == "X")) {
+            if (this.tablero[0][i].equals(this.tablero[1][i]) && this.tablero[0][i].equals(this.tablero[2][i])
+                && (this.tablero[0][i].equals("X") || this.tablero[0][i].equals("X"))) {
                     gano = true;
             }
         }
@@ -63,4 +63,3 @@ public class Tateti {
         }
     }
 }
-
