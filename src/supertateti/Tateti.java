@@ -1,6 +1,8 @@
 package supertateti;
 
 public class Tateti {
+    public Tateti() {}
+    
     public String[][] tablero = new String[3][3];
     private String posicionTablero = "";
     private boolean ganado = false;
