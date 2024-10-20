@@ -38,6 +38,8 @@ public class Sistema {
         }
     }
     
+    
+    
     public Usuario obtenerUsuario(){
         this.imprimirJugadores();
         int numero = entrada.nextInt();
@@ -50,6 +52,9 @@ public class Sistema {
     }
     
     public void mainMenu(){
+        System.out.println("\u001B[34m"+" ------------------- ");
+        System.out.println("|"+"\u001B[36m"+"   MENU PRINCIPAL  "+"\u001B[34m"+"|");
+        System.out.println(" ------------------- "+"\u001B[0m");
         System.out.println("1- Registrar un Jugador");
         System.out.println("2- Jugar al Gran Tateti");
         System.out.println("3- Ranking");
@@ -120,5 +125,19 @@ public class Sistema {
         usuario.setEdad(entrada.nextInt());
         usuario.setGanados(0);
         this.agregarUsuario(usuario);
+    }
+    
+    public void sleep(int milisegundos){
+        try{
+            Thread.sleep(milisegundos);
+        }
+        catch(InterruptedException a){
+            System.err.println("Error"+a.getMessage());
+        }
+    }
+    public void limpiarConsola() {
+        for(int i = 0 ; i < 30 ; i++){
+            System.out.println("");
+        }
     }
 }
