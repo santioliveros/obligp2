@@ -146,7 +146,7 @@ public class UnoVSPc extends GranTateti {
         
         // Definimos quien gano
         if (movGanador.equals("O")) {
-            ganador = "IA";
+            ganador = this.getUsuarioEnUso().getAlias();
         } else {
             ganador = "Jugador";
         }
