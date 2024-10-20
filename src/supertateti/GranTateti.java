@@ -56,7 +56,7 @@ public class GranTateti {
         int col = 0;
         for (int i=0 ; i<this.tableroGrande.length && !encontrado ; i++) {
             for (int j=0 ; j<this.tableroGrande.length && !encontrado ; j++) {
-                if (this.tableroEnUso.equals(this.tableroGrande[i][j].getPosicion())) {
+                if (this.getTableroEnUso().equals(this.tableroGrande[i][j].getPosicion())) {
                     fil = i;
                     col = j;
                     encontrado = true;
