@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Sistema {
+    public Sistema() {}
+    
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     public Scanner entrada = new Scanner(System.in);
     public void pushUsuario(Usuario usuario){
