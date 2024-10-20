@@ -9,6 +9,8 @@ package supertateti;
  * @author marti
  */
 public class UnoVSUno extends GranTateti {
+    public UnoVSUno() { super(); }
+    
     public Usuario[] usuariosEnUso = new Usuario[2];
     private Usuario jugadorActual;
     private boolean jugadaMagicaDisp1 = true;
