@@ -97,20 +97,7 @@ public class GranTateti {
         
         // Cambiamos el tablero activo
         this.setTableroEnUso(jugada);
-        
-        // Alternamos el jugador en uso al finalizar
-        this.alternarJugador();
     }
-    
-    
-    public void alternarJugador() {
-        if (this.getJugadorActivo() == "O") {
-            this.setJugadorActivo("X");
-        } else {
-            this.setJugadorActivo("O");
-        }
-    }
-    
     
     public boolean verificarJugada(String jugada) {
         boolean esValida = false;
