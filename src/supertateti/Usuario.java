@@ -10,6 +10,7 @@ package supertateti;
  * @author satio
  */
 public class Usuario {
+    public Usuario() {}
 
     private String nombre;
     private String alias;
