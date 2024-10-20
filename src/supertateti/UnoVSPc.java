@@ -9,6 +9,8 @@ package supertateti;
  * @author marti
  */
 public class UnoVSPc extends GranTateti {
+    public UnoVSPc() { super(); }
+    
     private Usuario usuarioEnUso;
     private boolean jugadaMagicaDisp = true;
     
